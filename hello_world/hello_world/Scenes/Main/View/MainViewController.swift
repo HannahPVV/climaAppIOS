@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lblUserError: UILabel!
     @IBOutlet weak var lblPasswordError: UILabel!
     
-    @IBOutlet weak var cardView: UIVIew!
+    @IBOutlet weak var cardView: UIView!
     
     //MARK: - Propiedades privadas
     private let viewModel = MainViewModel()
