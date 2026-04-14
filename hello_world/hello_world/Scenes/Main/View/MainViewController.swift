@@ -19,13 +19,19 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lblUserError: UILabel!
     @IBOutlet weak var lblPasswordError: UILabel!
     
+    @IBOutlet weak var cardView: UIVIew!
+    
     //MARK: - Propiedades privadas
     private let viewModel = MainViewModel()
     private var cancellable = Set<AnyCancellable>()
 
     // MARK: - Ciclo de vida
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        cardView.layer.cornerRadius = 10
+        cardView.clipsToBounds = true
+        
         tfPassword.isSecureTextEntry = true
         
         let tapGesture = UITapGestureRecognizer(
