@@ -25,11 +25,6 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lblPasswordError: UILabel!
     @IBOutlet weak var lblConfirmPasswordError: UILabel!
     
-
-    
-   
-    
-    
     
     
     private let viewRegister = RegisterViewModel()
@@ -80,14 +75,15 @@ class RegisterViewController: UIViewController {
             }
             .store(in: &cancellables)
         
+        
         viewRegister.$isUserValid
             .combineLatest(viewRegister.$userErrorMessage)
             .sink { [weak self] isValid, message in
-                guard let self else { return }
-                self.updateFieldState(textField: self.tfUser, label: self.lblUserError,
-    
-                isValid: isValid,
-                                      message: message)
+                guard let self = self else { return }
+                self.updateFieldState(textField: self.tfUser,
+                                     label: self.lblUserError,
+                                     isValid: isValid,
+                                     message: message)
             }
             .store(in: &cancellables)
         
@@ -140,14 +136,21 @@ class RegisterViewController: UIViewController {
                           label: UILabel,
                           isValid: Bool,
                           message: String) {
-        label.text = message
-        label.isHidden = isValid
         
-        if isValid {
+        label.text = message
+        
+        // Solo mostramos el error si es inválido Y el usuario ya escribió algo
+        let shouldShowError = !isValid && !(textField.text?.isEmpty ?? true)
+        
+        label.isHidden = !shouldShowError
+        
+        if !shouldShowError {
+            // Estado normal: Sin bordes
             textField.layer.borderWidth = 0
             textField.layer.borderColor = UIColor.clear.cgColor
         } else {
-            textField.layer.borderWidth = 1
+            // Estado de error: Borde rojo
+            textField.layer.borderWidth = 1.0
             textField.layer.cornerRadius = 6
             textField.layer.borderColor = UIColor.red.cgColor
         }
@@ -181,36 +184,45 @@ extension RegisterViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField,
-                   shouldChangeCharactersIn range: NSRange,
-                   replacementString string: String) -> Bool {
+                  shouldChangeCharactersIn range: NSRange,
+                  replacementString string: String) -> Bool {
         
+        // 1. Calculamos el texto exacto que resultará después del cambio
         let currentText = textField.text ?? ""
         guard let textRange = Range(range, in: currentText) else { return true }
         let updatedText = currentText.replacingCharacters(in: textRange, with: string)
         
-        if textField == tfUser {
+        // 2. Asignamos el valor al modelo y disparamos su validación específica
+        switch textField {
+        case tfUser:
             viewRegister.user.userName = updatedText
             viewRegister.validateUser()
             
-        } else if textField == tfName {
+        case tfName:
             viewRegister.user.name = updatedText
             viewRegister.validateName()
             
-        } else if textField == tfLastName {
+        case tfLastName:
             viewRegister.user.lastName = updatedText
             viewRegister.validateLastName()
             
-        } else if textField == tfPassword {
+        case tfPassword:
             viewRegister.user.password = updatedText
             viewRegister.validatePassword()
+            // CRÍTICO: Si cambio el password, debo re-validar que el de confirmar coincida
             viewRegister.validateConfirmPassword()
             
-        } else if textField == tfConfirmPassword {
+        case tfConfirmPassword:
             viewRegister.user.confirmPassword = updatedText
             viewRegister.validateConfirmPassword()
+            
+        default:
+            break
         }
         
+        // 3. Validamos el estado general del botón
         viewRegister.validateForm()
+        
         return true
     }
 }
