@@ -22,38 +22,50 @@
                                     <constraint firstAttribute="height" constant="117" id="p2p-2z-eo4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-Yp-VhG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-Yp-VhG">
                                 <rect key="frame" x="110" y="279" width="173" height="31.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31.333333333333314" id="QPd-nw-VJr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <color key="textColor" systemColor="tintColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-4c-3Ho">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BXH-4c-3Ho">
                                 <rect key="frame" x="0.0" y="356.33333333333326" width="393" height="495.66666666666674"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-54-VyX">
-                                        <rect key="frame" x="40" y="119" width="313" height="38.333333333333314"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-54-VyX">
+                                        <rect key="frame" x="40" y="122.66666666666669" width="313" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="sT8-5t-tMu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CI-aU-2G7">
-                                        <rect key="frame" x="50" y="341.33333333333337" width="293" height="34.333333333333314"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2CI-aU-2G7">
+                                        <rect key="frame" x="50" y="340.66666666666669" width="293" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="i4Y-3v-gwb"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="¿No tienes cuenta? Registrate"/>
                                         <connections>
                                             <segue destination="xYD-A5-yWM" kind="show" id="St9-Ur-ppe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-iZ-d1M">
-                                        <rect key="frame" x="50" y="274.33333333333331" width="293" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ufb-iZ-d1M">
+                                        <rect key="frame" x="50" y="273.66666666666669" width="293" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="9kX-pS-y3F"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Iniciar con Biométricos con FaceID"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naf-Yu-6To">
-                                        <rect key="frame" x="50" y="217.33333333333331" width="293" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naf-Yu-6To">
+                                        <rect key="frame" x="50" y="216.66666666666669" width="293" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="HMh-6O-GEL"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Entrar">
                                             <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
@@ -62,13 +74,16 @@
                                             <action selector="loginTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="sTH-gc-rgw"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5H2-Xh-sfL">
-                                        <rect key="frame" x="40" y="69" width="313" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5H2-Xh-sfL">
+                                        <rect key="frame" x="40" y="72.666666666666686" width="313" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="vkR-SW-Pkb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehO-Hj-AhR">
-                                        <rect key="frame" x="40" y="13" width="253" height="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Login" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ehO-Hj-AhR">
+                                        <rect key="frame" x="40" y="13" width="253" height="37.666666666666664"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <color key="textColor" systemColor="tintColor"/>
                                         <nil key="highlightedColor"/>
