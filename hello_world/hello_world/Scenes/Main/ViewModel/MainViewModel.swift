@@ -6,7 +6,7 @@
 //
 
 import Combine
-
+import Foundation
 class MainViewModel{
     
     var model: MainModel = .init()
@@ -28,13 +28,31 @@ class MainViewModel{
     
     func validateForm() {
         print("User \(user)")
-        isValidForm = !(user.userName.isEmpty || user.password.isEmpty)
-        print("isValid: \(isValidForm)")
+        
+        let defaults = UserDefaults.standard
+        let savedUserName = defaults.string(forKey: "userName") ?? ""
+        let savedPassword = defaults.string(forKey: "password") ?? ""
+        
+        // Si no hay usuario registrado, el form no es válido
+        guard !savedUserName.isEmpty else {
+            isUserValid = !user.userName.isEmpty
+            isPasswordValid = !user.password.isEmpty
+            isValidForm = false
+            return
+        }
         
         isUserValid = !user.userName.isEmpty
         isPasswordValid = !user.password.isEmpty
-
+        
+        // Validar que coincida con el usuario registrado
+        let credentialsMatch = user.userName == savedUserName && user.password == savedPassword
+        isValidForm = isUserValid && isPasswordValid && credentialsMatch
+        
+        print("isValid: \(isValidForm)")
+        
     }
+
+    
     
     func validateUser(){
        

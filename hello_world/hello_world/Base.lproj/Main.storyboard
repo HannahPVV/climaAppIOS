@@ -135,6 +135,7 @@
                     <connections>
                         <outlet property="btnLogin" destination="naf-Yu-6To" id="DIu-XR-TQ3"/>
                         <outlet property="cardView" destination="BXH-4c-3Ho" id="NPe-ig-x5g"/>
+                        <outlet property="lblWelcome" destination="zdU-Yp-VhG" id="6eq-dt-YcY"/>
                         <outlet property="tfPassword" destination="zxX-54-VyX" id="gcY-II-PCs"/>
                         <outlet property="tfUser" destination="5H2-Xh-sfL" id="LwC-U4-qyC"/>
                     </connections>
@@ -345,7 +346,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Registrarme"/>
                                 <connections>
-                                    <action selector="popViewController" destination="xYD-A5-yWM" eventType="touchUpInside" id="lz0-nG-srD"/>
+                                    <action selector="registerTapped:" destination="xYD-A5-yWM" eventType="touchUpInside" id="3bu-gy-Baf"/>
                                 </connections>
                             </button>
                         </subviews>

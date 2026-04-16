@@ -230,4 +230,11 @@ class RegisterViewModel {
         
         isValidForm = isUserValid && isNameValid && isLastNameValid && isPasswordValid && isConfirmPasswordValid
     }
+    
+    func saveToUserDefaults() {
+        let defaults = UserDefaults.standard
+        defaults.set(user.name, forKey: "name")
+        defaults.set(user.password, forKey: "password")
+        defaults.set(user.userName, forKey: "userName")
+    }
 }

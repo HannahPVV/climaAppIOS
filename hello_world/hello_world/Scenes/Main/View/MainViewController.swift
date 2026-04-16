@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var lblPasswordError: UILabel!
     
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var lblWelcome: UILabel!
     
     //MARK: - Propiedades privadas
     private let viewModel = MainViewModel()
@@ -69,10 +70,24 @@ class MainViewController: UIViewController {
                 self.setErrorBorder(for: self.tfPassword, show: !isValid)
             }
             .store(in: &cancellable)
+        
+        let defaults = UserDefaults.standard
+        if let savedName = defaults.string(forKey: "name"), !savedName.isEmpty {
+            lblWelcome.text = "Bienvenido, \(savedName)"
+        } else {
+            lblWelcome.text = "Bienvenido"
+        }
     }
     
     //Usar en storyboard y Outlet es componente
     @IBAction func loginTapped() {
+        viewModel.validateForm()
+        guard viewModel.isValidForm else {
+            setErrorBorder(for: tfUser, show: !viewModel.isUserValid)
+            setErrorBorder(for: tfPassword, show: !viewModel.isPasswordValid)
+            return
+        }
+
         //Validamos si existe o no
         guard let navigationController = navigationController else { return }
         let storyBoardName = "Main"
@@ -91,8 +106,8 @@ class MainViewController: UIViewController {
         
         navigationController.pushViewController(secondVC, animated: true)
         //navigationController.present(secondVC, animated: true)
-        
     }
+    
 }
 
 // MARK: - UITextFieldDelegate

@@ -156,6 +156,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    
     @IBAction func registerTapped(_ sender: UIButton) {
         view.endEditing(true)
         viewRegister.validateForm()
@@ -166,8 +167,21 @@ class RegisterViewController: UIViewController {
         btnRegister.alpha = 0.5
         
         print("Registro correcto")
-        
-        // Aquí luego puedes guardar o enviar datos
+            
+            // Guardar en UserDefaults
+            viewRegister.saveToUserDefaults()
+            
+            // Mostrar alert de éxito y regresar al login
+            let alert = UIAlertController(
+                title: "¡Registro exitoso!",
+                message: "Tu cuenta ha sido creada correctamente.",
+                preferredStyle: .alert
+            )
+            let okAction = UIAlertAction(title: "Aceptar", style: .default) { [weak self] _ in
+                self?.navigationController?.popViewController(animated: true)
+            }
+            alert.addAction(okAction)
+            present(alert, animated: true)
     }
     
     @IBAction func popViewController() {
