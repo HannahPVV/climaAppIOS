@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import LocalAuthentication
 
 class MainViewController: UIViewController {
     
@@ -87,7 +88,6 @@ class MainViewController: UIViewController {
             setErrorBorder(for: tfPassword, show: !viewModel.isPasswordValid)
             return
         }
-
         //Validamos si existe o no
         guard let navigationController = navigationController else { return }
         let storyBoardName = "Main"
@@ -108,6 +108,46 @@ class MainViewController: UIViewController {
         //navigationController.present(secondVC, animated: true)
     }
     
+    @IBAction func faceIDTapped() {
+            let context = LAContext() // Crea un contexto de autenticación biométrica
+            var error: NSError? = nil // Variable para capturar posibles errores durante la evaluación
+
+            // Verifica si el dispositivo puede usar autenticación biométrica (Face ID / Touch ID)
+            let canUseBiometrics = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+            if canUseBiometrics {
+                let reason = "Please authorize with Face ID" // Mensaje que se mostrará al usuario al solicitar autenticación
+
+                // Inicia la evaluación biométrica (Face ID / Touch ID)
+                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { [weak self] success, error in
+                    DispatchQueue.main.async { // Asegura que cualquier actualización de UI se haga en el hilo principal
+                        guard let self else { return }
+
+                        if success {
+                            // Autenticación exitosa
+                            // Puedes continuar con acciones protegidas o mostrar datos sensibles
+                            print("Biometric authentication successful")
+                            self.loginTapped() // Navegación al home view controller
+                        }
+                        else if let error = error {
+                            // Manejar fallo de autenticación o errores
+                            // Por ejemplo, mostrar un mensaje de error al usuario
+                            print("Biometric authentication failed with error: \(error.localizedDescription)")
+                        }
+                        else {
+                            // La autenticación biométrica fue cancelada o falló
+                            // Manejar el caso cuando el usuario cancela o falla la autenticación
+                            print("Biometric authentication was canceled or failed")
+                        }
+                    }
+                }
+            }
+            else {
+                let alert = UIAlertController(title: "Oops...", message: "You can't use this feature", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Ok :(", style: .cancel, handler: nil)
+                alert.addAction(alertAction)
+                present(alert, animated: true)
+            }
+        }// Se ejecuta cuando el usuario toca el botón de Face ID
 }
 
 // MARK: - UITextFieldDelegate
@@ -147,4 +187,7 @@ extension MainViewController: UITextFieldDelegate { //Herencia
             textField.layer.borderWidth = 0.0
         }
     }
+    
 }
+
+
