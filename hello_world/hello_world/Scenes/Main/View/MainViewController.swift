@@ -123,10 +123,12 @@ class MainViewController: UIViewController {
                         guard let self else { return }
 
                         if success {
-                            // Autenticación exitosa
-                            // Puedes continuar con acciones protegidas o mostrar datos sensibles
                             print("Biometric authentication successful")
-                            self.loginTapped() // Navegación al home view controller
+                            
+                            self.viewModel.isBiometricAuthenticated = true
+                            self.viewModel.validateForm()
+                            
+                            self.loginTapped()
                         }
                         else if let error = error {
                             // Manejar fallo de autenticación o errores

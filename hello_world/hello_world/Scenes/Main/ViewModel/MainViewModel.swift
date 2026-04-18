@@ -26,6 +26,8 @@ class MainViewModel{
         }
     }
     
+    var isBiometricAuthenticated: Bool = false
+    
     func validateForm() {
         print("User \(user)")
         
@@ -33,23 +35,21 @@ class MainViewModel{
         let savedUserName = defaults.string(forKey: "userName") ?? ""
         let savedPassword = defaults.string(forKey: "password") ?? ""
         
-        // Si no hay usuario registrado, el form no es válido
-        guard !savedUserName.isEmpty else {
-            isUserValid = !user.userName.isEmpty
-            isPasswordValid = !user.password.isEmpty
-            isValidForm = false
-            return
-        }
-        
+        // Validaciones básicas
         isUserValid = !user.userName.isEmpty
         isPasswordValid = !user.password.isEmpty
         
-        // Validar que coincida con el usuario registrado
+        // Validar credenciales
         let credentialsMatch = user.userName == savedUserName && user.password == savedPassword
-        isValidForm = isUserValid && isPasswordValid && credentialsMatch
+        
+        // Validar si existe usuario registrado
+        let hasRegisteredUser = !savedUserName.isEmpty
+        
+        // Aquí reemplazamos la lógica final
+        isValidForm = ((isUserValid && isPasswordValid && credentialsMatch) ||
+                      (isBiometricAuthenticated && hasRegisteredUser))
         
         print("isValid: \(isValidForm)")
-        
     }
 
     
