@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qTW-xW-NIH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qTW-xW-NIH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -216,11 +216,11 @@
             </objects>
             <point key="canvasLocation" x="138.1679389312977" y="130.98591549295776"/>
         </scene>
-        <!--Search-->
+        <!--Home-->
         <scene sceneID="w29-I7-G0k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NkE-1e-uH1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="iUy-b0-sbk"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="iUy-b0-sbk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3eI-K2-lT3">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -254,11 +254,11 @@
             </objects>
             <point key="canvasLocation" x="3346" y="380"/>
         </scene>
-        <!--Home-->
+        <!--Search-->
         <scene sceneID="llz-FE-K4D">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FKv-Hy-uAT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="KNK-xp-ymA"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="KNK-xp-ymA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5SU-UD-I4x">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -450,10 +450,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
