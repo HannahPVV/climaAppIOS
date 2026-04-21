@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvw-ka-yZD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3279" y="1099"/>
+            <point key="canvasLocation" x="3248" y="1111"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SN9-QR-IG2">
@@ -254,11 +254,11 @@
             </objects>
             <point key="canvasLocation" x="3346" y="380"/>
         </scene>
-        <!--Search-->
+        <!--Explore-->
         <scene sceneID="llz-FE-K4D">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FKv-Hy-uAT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="KNK-xp-ymA"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="location.magnifyingglass" catalog="system" id="KNK-xp-ymA"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5SU-UD-I4x">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -271,7 +271,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="066-Rq-EwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324" y="1099"/>
+            <point key="canvasLocation" x="2302" y="1111"/>
         </scene>
         <!--Register-->
         <scene sceneID="RVU-oh-MRa">
@@ -444,7 +444,7 @@
     <resources>
         <image name="Login" width="1920" height="1080"/>
         <image name="house" catalog="system" width="128" height="104"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="location.magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
