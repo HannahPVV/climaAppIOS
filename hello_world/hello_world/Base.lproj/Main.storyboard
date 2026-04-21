@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qTW-xW-NIH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qTW-xW-NIH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,11 +23,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Bienvenido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-Yp-VhG">
-                                <rect key="frame" x="110" y="279" width="173" height="31.333333333333314"/>
+                                <rect key="frame" x="70" y="279" width="262" height="31.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31.333333333333314" id="QPd-nw-VJr"/>
+                                    <constraint firstAttribute="width" constant="262" id="mr5-fG-Xcq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="textColor" systemColor="tintColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -119,19 +120,19 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.4816394630397105" green="0.71381377399193591" blue="0.96782869100570679" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zdU-Yp-VhG" secondAttribute="trailing" constant="61" id="6BE-dP-AiT"/>
                             <constraint firstItem="BXH-4c-3Ho" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Afj-Lm-fhe"/>
                             <constraint firstItem="BXH-4c-3Ho" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GMk-JE-x4l"/>
                             <constraint firstAttribute="bottom" secondItem="BXH-4c-3Ho" secondAttribute="bottom" id="L0P-Av-xpQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YDY-mA-AUE" secondAttribute="trailing" constant="16" id="Nc2-LF-9wH"/>
                             <constraint firstAttribute="trailing" secondItem="BXH-4c-3Ho" secondAttribute="trailing" id="Nxw-n5-pKo"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zdU-Yp-VhG" secondAttribute="trailing" constant="110" id="SJf-Xj-HwF"/>
                             <constraint firstAttribute="bottom" secondItem="BXH-4c-3Ho" secondAttribute="bottom" id="UQS-uI-Hkn"/>
-                            <constraint firstItem="zdU-Yp-VhG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="110" id="V8P-cB-bXs"/>
                             <constraint firstItem="BXH-4c-3Ho" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZVr-PR-fBj"/>
                             <constraint firstItem="BXH-4c-3Ho" firstAttribute="top" secondItem="zdU-Yp-VhG" secondAttribute="bottom" constant="46" id="cad-rs-ArO"/>
                             <constraint firstItem="YDY-mA-AUE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dsW-VS-Wsv"/>
                             <constraint firstItem="zdU-Yp-VhG" firstAttribute="top" secondItem="YDY-mA-AUE" secondAttribute="bottom" constant="32" id="elS-Rl-18X"/>
                             <constraint firstItem="YDY-mA-AUE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="130" id="lXz-3q-tfI"/>
+                            <constraint firstItem="zdU-Yp-VhG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="70" id="vIN-R2-UZ6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="EKy-lV-xi7"/>
@@ -215,11 +216,11 @@
             </objects>
             <point key="canvasLocation" x="138.1679389312977" y="130.98591549295776"/>
         </scene>
-        <!--List-->
+        <!--Search-->
         <scene sceneID="w29-I7-G0k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NkE-1e-uH1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="list.bullet" catalog="system" id="iUy-b0-sbk"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="iUy-b0-sbk"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3eI-K2-lT3">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -443,16 +444,16 @@
     <resources>
         <image name="Login" width="1920" height="1080"/>
         <image name="house" catalog="system" width="128" height="104"/>
-        <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tintColor">
-            <color red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.53333333329999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
