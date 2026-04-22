@@ -13,3 +13,9 @@ struct CurrentWeatherModel {
     let condition: WeatherCondition
 }
 
+extension CurrentWeatherModel {
+    var temperatureText: String {
+        "\(Int(temperature))°"
+    }
+}
+
