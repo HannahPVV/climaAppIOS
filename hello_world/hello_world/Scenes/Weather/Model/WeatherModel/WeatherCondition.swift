@@ -13,21 +13,27 @@ enum WeatherCondition {
     case rainy
     case storm
     case wind
+    case snowy
+    case unknown
 }
 
 extension WeatherCondition {
-    var iconName: String {
+    var imageName: String {
         switch self {
         case .sunny:
-            return "sun.max"
+            return "sunny"
         case .cloudy:
-            return "cloud"
+            return "cloudy"
         case .rainy:
-            return "cloud.rain"
+            return "rainy"
         case .storm:
-            return "cloud.bolt"
+            return "storm"
         case .wind:
-            return "wind"
+            return "wind"   
+        case .snowy:
+            return "snowy"
+        case .unknown:
+            return "unknown"
         }
     }
 }
