@@ -26,6 +26,33 @@ class MainViewController: UIViewController {
     //MARK: - Propiedades privadas
     private let viewModel = MainViewModel()
     private var cancellable = Set<AnyCancellable>()
+    
+    // MARK: - Eye Button Helper
+    private func addPasswordToggle(to textField: UITextField) {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        button.tintColor = .systemBlue
+        button.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        button.addTarget(self, action: #selector(togglePasswordVisibility(_:)), for: .touchUpInside)
+
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 40))
+        button.center = CGPoint(x: 16, y: 20)
+        container.addSubview(button)
+
+        textField.rightView = container  // ← container, NO button
+        textField.rightViewMode = .always
+    }
+    @objc private func togglePasswordVisibility(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        tfPassword.isSecureTextEntry.toggle()
+        
+        // Fix para que el cursor no salte al final
+        if let text = tfPassword.text {
+            tfPassword.text = nil
+            tfPassword.insertText(text)
+        }
+    }
 
     // MARK: - Ciclo de vida
     override func viewDidLoad() {
@@ -78,6 +105,9 @@ class MainViewController: UIViewController {
         } else {
             lblWelcome.text = "Bienvenido"
         }
+        addPasswordToggle(to: tfPassword)
+        
+        
     }
     
     //Usar en storyboard y Outlet es componente

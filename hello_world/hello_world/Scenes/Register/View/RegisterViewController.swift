@@ -24,12 +24,71 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var lblLastNameError: UILabel!
     @IBOutlet weak var lblPasswordError: UILabel!
     @IBOutlet weak var lblConfirmPasswordError: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
     
     
     
     private let viewRegister = RegisterViewModel()
     private var cancellables = Set<AnyCancellable>()
     
+    // MARK: - Eye Button Helper
+    private func addPasswordToggle(to textField: UITextField) {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(systemName: "eye"), for: .normal)
+        button.setImage(UIImage(systemName: "eye.slash"), for: .selected)
+        button.tintColor = .systemBlue
+        button.frame = CGRect(x: 0, y: 0, width: 28, height: 28)
+        button.addTarget(self, action: #selector(togglePasswordVisibility(_:)), for: .touchUpInside)
+
+        let container = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 40))
+        button.center = CGPoint(x: 16, y: 20)
+        container.addSubview(button)
+
+        textField.rightView = container  // ← container, NO button
+        textField.rightViewMode = .always
+    }
+
+    @objc private func togglePasswordVisibility(_ sender: UIButton) {
+        sender.isSelected.toggle()
+        
+        // Determina cuál textField le pertenece el botón
+        let targetField: UITextField?
+        if sender === tfPassword.rightView {
+            targetField = tfPassword
+        } else {
+            targetField = tfConfirmPassword
+        }
+        
+        guard let field = targetField else { return }
+        field.isSecureTextEntry.toggle()
+        
+        // Fix para que el cursor no salte
+        if let text = field.text {
+            field.text = nil
+            field.insertText(text)
+        }
+    }
+    private func setupCardView() {
+        let card = UIView()
+        card.backgroundColor = .white
+        card.layer.cornerRadius = 24
+        card.layer.shadowColor = UIColor.black.cgColor
+        card.layer.shadowOpacity = 0.12
+        card.layer.shadowOffset = CGSize(width: 0, height: 4)
+        card.layer.shadowRadius = 16
+        card.translatesAutoresizingMaskIntoConstraints = false
+
+        view.insertSubview(card, at: 0)
+
+        NSLayoutConstraint.activate([
+            card.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            card.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+    
+            card.topAnchor.constraint(equalTo: lblTitle.topAnchor, constant: -12),
+            
+            card.bottomAnchor.constraint(equalTo: btnRegister.bottomAnchor, constant: 20)
+        ])
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +107,10 @@ class RegisterViewController: UIViewController {
         
         btnRegister.isEnabled = false
         btnRegister.alpha = 0.5
+        addPasswordToggle(to: tfPassword)
+        addPasswordToggle(to: tfConfirmPassword)
+        
+        setupCardView()
     }
     
     
