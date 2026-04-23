@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HomeWeather {
+struct HomeModel {
     let current: CurrentWeatherModel
     let hourlyForecast: [HourlyForecastModel]
     let metrics: [WeatherDetailsModel]

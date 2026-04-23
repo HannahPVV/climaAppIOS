@@ -14,6 +14,10 @@ class HomeViewController:UITabBarController{
     //MARK: -Propiedades privadas
     private let viewModel:HomeViewModel
     
+    @IBOutlet weak var cardView: UIView!
+    
+    
+    
     init?(coder:NSCoder,viewModel:HomeViewModel){
         self.viewModel = viewModel
         super.init(coder:coder)
@@ -25,6 +29,9 @@ class HomeViewController:UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        cardView.layer.cornerRadius = 10
+        cardView.clipsToBounds = true
         
         navigationItem.setHidesBackButton(true, animated: false) //ocultar botton
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
