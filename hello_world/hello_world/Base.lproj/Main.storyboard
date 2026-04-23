@@ -164,11 +164,10 @@
             </objects>
             <point key="canvasLocation" x="3248" y="1111"/>
         </scene>
-        <!--Home View Controller-->
+        <!--View Controller-->
         <scene sceneID="SN9-QR-IG2">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J1T-ts-hFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="rv1-HF-F4J" customClass="HomeViewController" customModule="hello_world" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rv1-HF-F4J" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iXh-e2-C15">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -238,6 +237,7 @@
                         <outlet property="cardView" destination="Wmy-t3-E6f" id="17n-kJ-NMD"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1T-ts-hFh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4510.6870229007636" y="-382.3943661971831"/>
         </scene>
