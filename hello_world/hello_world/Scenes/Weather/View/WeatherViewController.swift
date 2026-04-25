@@ -62,6 +62,7 @@ class WeatherViewController: UIViewController {
         conditionImageView.image = UIImage(named: viewModel.currentWeather.condition.imageName)
         
         hourlyCollectionView.backgroundColor = .clear
+        hourlyCollectionView.showsHorizontalScrollIndicator = false
         
         
         let d = viewModel.details
