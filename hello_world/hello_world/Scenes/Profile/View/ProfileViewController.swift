@@ -14,6 +14,9 @@ class ProfileViewController: UIViewController {
     var player: AVPlayer? //Reproductor de música
     
     @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var lblNombre: UITextField!
+    @IBOutlet weak var lblApellido: UITextField!
+    @IBOutlet weak var lblUsername: UITextField!
     
     
     //MARK: - DID LOAD
@@ -30,8 +33,22 @@ class ProfileViewController: UIViewController {
         
         navigationItem.setRightBarButtonItems([helpButton], animated: false)
         navigationItem.setLeftBarButtonItems( [stopButton, audioButton], animated: false)
+        loadUserData()
+        
         
     }
+    //traer datos guardados del usuario
+    private func loadUserData() {
+            let defaults = UserDefaults.standard
+            
+            let name     = defaults.string(forKey: "name")
+            let lastName = defaults.string(forKey: "lastName")
+            let userName = defaults.string(forKey: "userName")
+            
+            lblNombre.text   = name     ?? "No registrado"
+            lblApellido.text = lastName ?? "No registrado"
+            lblUsername.text = userName ?? "No registrado"
+        }
     
     //Desapaerzca el audio después de que se quite
     override func viewDidDisappear(_ animated: Bool) {
