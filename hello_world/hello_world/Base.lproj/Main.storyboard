@@ -157,8 +157,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UBICACIONES GUARDADAS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKX-Ey-qVD">
-                                <rect key="frame" x="16" y="87" width="166.33333333333334" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="UBICACIONES GUARDADAS" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKX-Ey-qVD">
+                                <rect key="frame" x="16" y="87" width="268" height="69"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W8" family="Hiragino Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -168,8 +168,11 @@
                                 <color key="backgroundColor" red="0.8891601562" green="0.9350585938" blue="0.9721679688" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTb-FQ-VEu">
-                                <rect key="frame" x="300.33333333333331" y="93" width="49.666666666666686" height="34.333333333333343"/>
+                                <rect key="frame" x="310.33333333333348" y="93" width="49.666666666666515" height="34.333333333333258"/>
                                 <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49.666666666666515" id="74W-XB-KBo"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="">
@@ -183,9 +186,9 @@
                             <constraint firstItem="6D4-mY-XXB" firstAttribute="leading" secondItem="4WQ-sr-ysQ" secondAttribute="leading" id="6fE-Ny-1as"/>
                             <constraint firstItem="EKX-Ey-qVD" firstAttribute="leading" secondItem="fTg-rB-vYZ" secondAttribute="leading" constant="16" id="BWD-08-Xxa"/>
                             <constraint firstItem="6D4-mY-XXB" firstAttribute="top" secondItem="TTb-FQ-VEu" secondAttribute="bottom" constant="39" id="C83-gH-kXj"/>
-                            <constraint firstAttribute="trailing" secondItem="TTb-FQ-VEu" secondAttribute="trailing" constant="43" id="ETk-vC-otw"/>
-                            <constraint firstItem="TTb-FQ-VEu" firstAttribute="leading" secondItem="EKX-Ey-qVD" secondAttribute="trailing" constant="118" id="N6A-vL-n4m"/>
                             <constraint firstItem="EKX-Ey-qVD" firstAttribute="top" secondItem="fTg-rB-vYZ" secondAttribute="top" constant="87" id="XVv-v0-6pq"/>
+                            <constraint firstItem="TTb-FQ-VEu" firstAttribute="leading" secondItem="EKX-Ey-qVD" secondAttribute="trailing" constant="26.333333333333485" id="aIb-c5-5K2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TTb-FQ-VEu" secondAttribute="trailing" constant="17" id="fmw-IU-rRs"/>
                             <constraint firstItem="6D4-mY-XXB" firstAttribute="trailing" secondItem="4WQ-sr-ysQ" secondAttribute="trailing" id="rbd-Dh-VIv"/>
                             <constraint firstItem="TTb-FQ-VEu" firstAttribute="top" secondItem="fTg-rB-vYZ" secondAttribute="top" constant="93" id="tA3-GF-jF7"/>
                             <constraint firstItem="6D4-mY-XXB" firstAttribute="bottom" secondItem="4WQ-sr-ysQ" secondAttribute="bottom" id="tgg-lZ-G9A"/>
