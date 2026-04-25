@@ -110,7 +110,7 @@ class RegisterViewController: UIViewController {
         addPasswordToggle(to: tfPassword)
         addPasswordToggle(to: tfConfirmPassword)
         
-        setupCardView()
+        
     }
     
     

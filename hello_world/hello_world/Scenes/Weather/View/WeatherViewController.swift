@@ -31,6 +31,11 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if viewModel == nil {
+                setupMockData()
+            }// probar datos quitar para api
+            
+        
         configureCard()
         configureDelegates()
         configureUI()
@@ -56,6 +61,9 @@ class WeatherViewController: UIViewController {
         temperatureLabel.text = viewModel.currentWeather.temperatureText
         conditionImageView.image = UIImage(named: viewModel.currentWeather.condition.imageName)
         
+        hourlyCollectionView.backgroundColor = .clear
+        
+        
         let d = viewModel.details
         feelsLikeLabel.text = d.feelsLikeText
         uvIndexLabel.text = d.uvIndexText
@@ -63,6 +71,32 @@ class WeatherViewController: UIViewController {
         precipitationLabel.text = d.precipitationText
         humidityLabel.text = d.humidityText
     }
+    
+    private func setupMockData() {
+        let model = WeatherScreenModel(
+            currentWeather: CurrentWeatherModel(
+                city: "Querétaro",
+                temperature: 25,
+                condition: .sunny
+            ),
+            hourlyForecast: [
+                HourlyForecastModel(hourText: "8 AM", temperature: 25, condition: .sunny),
+                HourlyForecastModel(hourText: "9 AM", temperature: 26, condition: .cloudy),
+                HourlyForecastModel(hourText: "10 AM", temperature: 27, condition: .sunny),
+                HourlyForecastModel(hourText: "11 AM", temperature: 28, condition: .wind),
+                HourlyForecastModel(hourText: "12 PM", temperature: 29, condition: .sunny)
+            ],
+            details: WeatherDetailsModel(
+                feelsLike: 26,
+                uvIndex: 8,
+                windSpeed: 13,
+                precipitation: 0,
+                humidity: 60
+            )
+        )
+        
+        viewModel = WeatherViewModel(model: model)
+    }//probar para api quitar depues
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
