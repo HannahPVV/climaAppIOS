@@ -16,10 +16,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var conditionImageView: UIImageView!
+    @IBOutlet weak var currentWeatherCardView: UIView!
+
     
     @IBOutlet weak var hourlyCollectionView: UICollectionView!
     
-    @IBOutlet weak var currentWeatherCardView: UIView!
+    @IBOutlet weak var metricsWeatherCardView: UIView!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var uvIndexLabel: UILabel!
     @IBOutlet weak var windLabel: UILabel!
@@ -37,6 +39,11 @@ class WeatherViewController: UIViewController {
     private func configureCard() {
         currentWeatherCardView.layer.cornerRadius = 20
         currentWeatherCardView.clipsToBounds = true
+        
+        metricsWeatherCardView.layer.cornerRadius = 20
+        metricsWeatherCardView.clipsToBounds = true
+        
+    
     }
     
     private func configureDelegates() {
