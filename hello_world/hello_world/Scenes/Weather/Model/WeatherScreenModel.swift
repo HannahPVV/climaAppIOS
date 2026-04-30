@@ -8,7 +8,7 @@
 import Foundation
 
 struct WeatherScreenModel {
-    let currentWeather: CurrentWeatherModel
-    let hourlyForecast: [HourlyForecastModel]
-    let details: WeatherDetailsModel
+    var currentWeather: CurrentWeatherModel
+    var hourlyForecast: [HourlyForecastModel]
+    var details: WeatherDetailsModel
 }

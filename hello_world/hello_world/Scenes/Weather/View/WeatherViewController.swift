@@ -10,7 +10,9 @@ import UIKit
 class WeatherViewController: UIViewController {
     
     // MARK: - ViewModel
-    var viewModel: WeatherViewModel!
+    let viewModel = WeatherViewModel()
+    
+    
     
     // MARK: - Outlets
     @IBOutlet weak var cityLabel: UILabel!
@@ -30,15 +32,14 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if viewModel == nil {
-                setupMockData()
-            }// probar datos quitar para api
-            
-        
         configureCard()
         configureDelegates()
         configureUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        getWeather()
     }
     
     private func configureCard() {
@@ -73,31 +74,31 @@ class WeatherViewController: UIViewController {
         humidityLabel.text = d.humidityText
     }
     
-    private func setupMockData() {
-        let model = WeatherScreenModel(
-            currentWeather: CurrentWeatherModel(
-                city: "Querétaro",
-                temperature: 25,
-                condition: .sunny
-            ),
-            hourlyForecast: [
-                HourlyForecastModel(hourText: "8 AM", temperature: 25, condition: .sunny),
-                HourlyForecastModel(hourText: "9 AM", temperature: 26, condition: .cloudy),
-                HourlyForecastModel(hourText: "10 AM", temperature: 27, condition: .sunny),
-                HourlyForecastModel(hourText: "11 AM", temperature: 28, condition: .wind),
-                HourlyForecastModel(hourText: "12 PM", temperature: 29, condition: .sunny)
-            ],
-            details: WeatherDetailsModel(
-                feelsLike: 26,
-                uvIndex: 8,
-                windSpeed: 13,
-                precipitation: 0,
-                humidity: 60
-            )
-        )
-        
-        viewModel = WeatherViewModel(model: model)
-    }//probar para api quitar depues
+    
+    
+    private func getWeather() {
+        Task {
+            do {
+                try await viewModel.getWeather()
+                try await viewModel.getForecast()
+                try await viewModel.getDetails()
+                configureUI()
+                hourlyCollectionView.reloadData()
+                
+                
+                
+            } catch {
+                showAlert(title: "Oops...", message: error.localizedDescription)
+            }
+        }
+    }
+   
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Ok", style: .cancel)
+        alert.addAction(alertAction)
+        present(alert, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
