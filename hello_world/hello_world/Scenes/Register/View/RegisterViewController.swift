@@ -68,29 +68,60 @@ class RegisterViewController: UIViewController {
             field.insertText(text)
         }
     }
+    
     private func setupCardView() {
+        view.backgroundColor = UIColor(red: 0.72, green: 0.88, blue: 1.0, alpha: 1.0)
+        
         let card = UIView()
         card.backgroundColor = .white
-        card.layer.cornerRadius = 24
+        card.layer.cornerRadius = 28
         card.layer.shadowColor = UIColor.black.cgColor
-        card.layer.shadowOpacity = 0.12
-        card.layer.shadowOffset = CGSize(width: 0, height: 4)
-        card.layer.shadowRadius = 16
+        card.layer.shadowOpacity = 0.10
+        card.layer.shadowOffset = CGSize(width: 0, height: 6)
+        card.layer.shadowRadius = 14
         card.translatesAutoresizingMaskIntoConstraints = false
-
-        view.insertSubview(card, at: 0)
+        
+        view.insertSubview(card, at: 0) //atrás de todo
 
         NSLayoutConstraint.activate([
-            card.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            card.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-    
-            card.topAnchor.constraint(equalTo: lblTitle.topAnchor, constant: -12),
-            
-            card.bottomAnchor.constraint(equalTo: btnRegister.bottomAnchor, constant: 20)
+            card.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            card.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+            card.topAnchor.constraint(equalTo: lblTitle.topAnchor, constant: -30),
+            card.bottomAnchor.constraint(equalTo: btnRegister.bottomAnchor, constant: 30)
         ])
     }
+    
+    
+    
+    private func setupTextFieldsStyle() {
+        let fields = [tfUser, tfName, tfLastName, tfPassword, tfConfirmPassword]
+        
+        fields.forEach { textField in
+            guard let textField else { return }
+            
+            textField.borderStyle = .none
+            textField.backgroundColor = .white
+            textField.layer.cornerRadius = 22
+            textField.layer.borderWidth = 2
+            textField.layer.borderColor = UIColor.systemBlue.cgColor
+            textField.clipsToBounds = true
+        }
+    }
+    
+    private func setupButtonStyle() {
+        btnRegister.backgroundColor = UIColor.systemBlue
+        btnRegister.layer.cornerRadius = 24
+        btnRegister.clipsToBounds = true
+        btnRegister.setTitleColor(.white, for: .normal)
+    }
+    
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCardView()
+        setupTextFieldsStyle()
+        setupButtonStyle()
         
         tfPassword.isSecureTextEntry = true
         tfConfirmPassword.isSecureTextEntry = true
@@ -202,20 +233,19 @@ class RegisterViewController: UIViewController {
         
         label.text = message
         
-        // Solo mostramos el error si es inválido Y el usuario ya escribió algo
         let shouldShowError = !isValid && !(textField.text?.isEmpty ?? true)
-        
         label.isHidden = !shouldShowError
         
-        if !shouldShowError {
-            // Estado normal: Sin bordes
-            textField.layer.borderWidth = 0
-            textField.layer.borderColor = UIColor.clear.cgColor
-        } else {
-            // Estado de error: Borde rojo
-            textField.layer.borderWidth = 1.0
-            textField.layer.cornerRadius = 6
+        textField.layer.cornerRadius = 22
+        textField.layer.borderWidth = 2
+        textField.borderStyle = .none
+        textField.backgroundColor = .white
+        textField.clipsToBounds = true
+        
+        if shouldShowError {
             textField.layer.borderColor = UIColor.red.cgColor
+        } else {
+            textField.layer.borderColor = UIColor.systemBlue.cgColor
         }
     }
     

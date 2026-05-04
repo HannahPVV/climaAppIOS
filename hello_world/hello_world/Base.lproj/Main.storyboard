@@ -585,10 +585,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jGU-SI-ebX">
-                                <rect key="frame" x="16" y="187.99999999999997" width="361" height="461.33333333333326"/>
+                                <rect key="frame" x="40" y="188" width="313" height="561.66666666666663"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQY-iZ-Hpq">
-                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ev-BB-2tl">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" systemColor="linkColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQY-iZ-Hpq" customClass="PaddingTextField" customModule="hello_world" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="36.333333333333343" width="313" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="jdy-qz-WJt"/>
                                         </constraints>
@@ -596,51 +602,63 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwc-59-lij">
-                                        <rect key="frame" x="0.0" y="66" width="361" height="50"/>
+                                        <rect key="frame" x="0.0" y="102.33333333333331" width="313" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p2L-jc-nhh" userLabel="Tf Nombre">
-                                        <rect key="frame" x="0.0" y="132" width="361" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p2L-jc-nhh" userLabel="Tf Nombre" customClass="PaddingTextField" customModule="hello_world" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="168.33333333333331" width="313" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="5RZ-eK-Ufb"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXw-Q4-gM9">
-                                        <rect key="frame" x="0.0" y="182" width="361" height="20.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="234.33333333333331" width="313" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-dT-6R3" userLabel="Tf Apellidos">
-                                        <rect key="frame" x="0.0" y="218.33333333333331" width="361" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Apellido(s)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-dT-6R3" userLabel="Tf Apellidos" customClass="PaddingTextField" customModule="hello_world" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="270.66666666666669" width="313" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="97i-pe-sGF"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6F-Gu-7PU">
-                                        <rect key="frame" x="0.0" y="268.33333333333331" width="361" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="336.66666666666663" width="313" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYE-u8-hDX" userLabel="Tf Password">
-                                        <rect key="frame" x="0.0" y="304.66666666666669" width="361" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oYE-u8-hDX" userLabel="Tf Password" customClass="PaddingTextField" customModule="hello_world" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="373" width="313" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="FB0-Is-k1H"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9b-sI-ILZ">
-                                        <rect key="frame" x="0.0" y="354.66666666666663" width="361" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="439" width="313" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cofirmar Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2H-uG-Ky7" userLabel="Tf PasswordC">
-                                        <rect key="frame" x="0.0" y="391" width="361" height="34"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cofirmar Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F2H-uG-Ky7" userLabel="Tf PasswordC" customClass="PaddingTextField" customModule="hello_world" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="475.33333333333337" width="313" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bbZ-4w-QHk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdR-ij-mam">
-                                        <rect key="frame" x="0.0" y="441" width="361" height="20.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="541.33333333333337" width="313" height="20.333333333333371"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -658,20 +676,21 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xd8-74-ybT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81640625" green="0.8979492188" blue="0.9873046875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="jGU-SI-ebX" firstAttribute="top" secondItem="xd8-74-ybT" secondAttribute="top" constant="16" id="QUh-qu-sTO"/>
-                            <constraint firstItem="xd8-74-ybT" firstAttribute="trailing" secondItem="jGU-SI-ebX" secondAttribute="trailing" constant="16" id="t5S-gT-AUw"/>
-                            <constraint firstItem="jGU-SI-ebX" firstAttribute="leading" secondItem="xd8-74-ybT" secondAttribute="leading" constant="16" id="zwj-O8-pwA"/>
+                            <constraint firstItem="xd8-74-ybT" firstAttribute="trailing" secondItem="jGU-SI-ebX" secondAttribute="trailing" constant="40" id="po8-kT-BLX"/>
+                            <constraint firstItem="jGU-SI-ebX" firstAttribute="leading" secondItem="xd8-74-ybT" secondAttribute="leading" constant="40" id="vLb-Ab-KlW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" largeTitleDisplayMode="always" id="jS8-Q2-DNb"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="jS8-Q2-DNb"/>
                     <connections>
                         <outlet property="btnRegister" destination="PfA-PH-sgp" id="lq2-Y4-tYF"/>
                         <outlet property="lblConfirmPasswordError" destination="IdR-ij-mam" id="heP-xH-jlO"/>
                         <outlet property="lblLastNameError" destination="W6F-Gu-7PU" id="DXE-YV-zfI"/>
                         <outlet property="lblNameError" destination="cXw-Q4-gM9" id="Wtj-PW-VcV"/>
                         <outlet property="lblPasswordError" destination="E9b-sI-ILZ" id="X7v-bs-O8L"/>
+                        <outlet property="lblTitle" destination="1ev-BB-2tl" id="6Xd-6H-KXo"/>
                         <outlet property="lblUserError" destination="Xwc-59-lij" id="sKq-ox-oL4"/>
                         <outlet property="tfConfirmPassword" destination="F2H-uG-Ky7" id="HRk-3v-xJQ"/>
                         <outlet property="tfLastName" destination="WXI-dT-6R3" id="Lhg-vy-kVx"/>
@@ -861,6 +880,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

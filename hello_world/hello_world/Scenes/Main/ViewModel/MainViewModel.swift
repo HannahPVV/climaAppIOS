@@ -53,12 +53,5 @@ class MainViewModel{
     }
 
     
-    
-    func validateUser(){
-       
-    }
-    
-    func validatePassword(){
-        
-    }
+  
 }
