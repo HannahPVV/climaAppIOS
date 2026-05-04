@@ -11,6 +11,7 @@ protocol WeatherRepositoryProtocol {
     func getWeather() async throws -> GetWeatherCodable
     func getForecast() async throws -> GetForecastCodable
     func getWeather(_ request: [String: Any]) async throws -> GetWeatherCodable // EXAMPLE WITH REQUEST
+    func getWeather(byCity city: String) async throws -> GetWeatherCodable //api search
 }
 
 actor WeatherRepository: WeatherRepositoryProtocol {
@@ -79,4 +80,28 @@ actor WeatherRepository: WeatherRepositoryProtocol {
         
         return response
     }
-}
+    //api search
+    
+    func getWeather(byCity city: String) async throws -> GetWeatherCodable {
+            let request = ApiRequestModel(
+                endpoint: .GET_WEATHER,
+                method: .get,
+                header: .noHeader,
+                encoding: .url,
+                parameters: [
+                    "q": city,
+                    "appid": "f94944b51f39084eb06c09878700090f",
+                    "units": "metric",
+                    "lang": "es"
+                ]
+            )
+
+            let response = try await ApiService.shared.request(
+                request,
+                GetWeatherCodable.self
+            )
+
+            return response
+        }
+    }
+

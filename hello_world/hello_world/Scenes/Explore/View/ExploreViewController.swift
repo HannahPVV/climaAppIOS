@@ -58,6 +58,16 @@ class ExploreViewController: UIViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &cancellables)
+        viewModel.$errorMessage
+            .receive(on: DispatchQueue.main)
+            .compactMap { $0 }
+            .sink { [weak self] message in
+                guard let self else { return }
+                let alert = UIAlertController(title: "Ciudad no encontrada", message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+                self.present(alert, animated: true)
+            }
+            .store(in: &cancellables)
     }
 
     // MARK: - Actions
@@ -84,6 +94,7 @@ class ExploreViewController: UIViewController {
         present(alert, animated: true)
     }
 }
+
 
 // MARK: - UITableViewDataSource
 extension ExploreViewController: UITableViewDataSource {

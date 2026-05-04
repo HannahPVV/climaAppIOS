@@ -44,10 +44,5 @@ struct LocationModel {
 
 // MARK: - ExploreModel
 struct ExploreModel {
-    var locations: [LocationModel] = [
-        LocationModel(city: "Zibatá",      temperature: 23, weather: .cloudy),
-        LocationModel(city: "Guadalajara", temperature: 20, weather: .rainy),
-        LocationModel(city: "CDMX",        temperature: 23, weather: .sunny),
-        LocationModel(city: "Londres",     temperature:  2, weather: .snowy)
-    ]
+    var locations: [LocationModel] = []   // 👈 vacío, ya no hardcodeado
 }
