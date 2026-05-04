@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         cardView.layer.cornerRadius = 10
         cardView.clipsToBounds = true
+        navigationItem.setHidesBackButton(true, animated: false)
         
         tfPassword.isSecureTextEntry = true
         
