@@ -247,10 +247,7 @@ class RegisterViewController: UIViewController {
             present(alert, animated: true)
     }
     
-    @IBAction func popViewController() {
-        guard let navigationController = navigationController else { return }
-        navigationController.popViewController(animated: true)
-    }
+    
 }
 
 extension RegisterViewController: UITextFieldDelegate {
